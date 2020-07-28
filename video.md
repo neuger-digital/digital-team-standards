@@ -68,7 +68,7 @@ Note: H.264 is compatible with Safari and Edge, but HEVC is a newer format that 
 
 Chroma subsampling is a great way of reducing file size by keeping the luma data, but reducing some of the color information. 4:4:4 has no subsampling and has better quality but larger file sizes. 4:2:2 and 4:2:0 are common subsampling methods. If there is fine detail or fine text in the video, you might need to play around with the chroma subsampling to make it work.
 
-Below, the `-pix_fmt` argument allows us to choose the chroma subsampling. For most web purposes 8-bit 4:2:0 should be fine. If you want to have the greatest amount of detail, consider 8-bit 4:4:4. Before going beyond 4:2:0, check the original chroma subsampling of the source video. 10-bit is also an option and is great for production, but it likely too large for practical use.
+Below, the `-pix_fmt` argument allows us to choose the chroma subsampling. For most web purposes 8-bit 4:2:0 should be fine. If you want to have the greatest amount of detail, consider 8-bit 4:4:4. Before going beyond 4:2:0, check the original chroma subsampling of the source video. 10-bit is also an option and is great for video production, but it likely too large for practical use on websites.
 
 * [Understanding chroma subsampling](https://en.wikipedia.org/wiki/Chroma_subsampling)
 * [Chroma subsampling options](https://trac.ffmpeg.org/wiki/Chroma%20Subsampling)
