@@ -6,7 +6,7 @@ For design assets, we recommend uploading those via the CMS (if they are editabl
 
 ## Accessibility
 
-For all video, we need captions or transcripts available and do not flash anything more than three times in one second. See related WCAG guidelines:
+For all video with audio, we need captions and can't flash anything more than three times in one second. See related WCAG guidelines:
 
 * [1.2.1 - Audio-only and Video-only (Prerecorded)](https://www.w3.org/WAI/WCAG21/quickref/#audio-only-and-video-only-prerecorded)
 * [1.2.2 – Captions (Prerecorded)](https://www.w3.org/WAI/WCAG21/quickref/#captions-prerecorded)
@@ -14,6 +14,8 @@ For all video, we need captions or transcripts available and do not flash anythi
 * [1.2.5 – Audio Description (Prerecorded)
 ](https://www.w3.org/WAI/WCAG21/quickref/#audio-description-prerecorded)
 * [2.3.1 – Three Flashes or Below Threshold](https://www.w3.org/WAI/WCAG21/quickref/#three-flashes-or-below-threshold)
+
+If there is no audio, captions are not needed, but consider an `aria-label` attribute on the video tag to explain to users what's happening in the video.
 
 ## Captions
 
