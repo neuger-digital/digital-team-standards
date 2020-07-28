@@ -14,11 +14,16 @@ For all video, we need captions or transcripts available and do not flash anythi
 * [1.2.5 – Audio Description (Prerecorded)
 ](https://www.w3.org/WAI/WCAG21/quickref/#audio-description-prerecorded)
 * [2.3.1 – Three Flashes or Below Threshold](https://www.w3.org/WAI/WCAG21/quickref/#three-flashes-or-below-threshold)
-* [Captions vs. Subtitles](https://www.w3.org/WAI/media/av/captions/)
 
 ## Captions
 
 We create captions using the [WebVTT format (.vtt)](https://www.w3.org/TR/webvtt/).
+
+### Does my video need captions or subtitles?
+
+Read about the [difference between captions and subtitles](https://www.w3.org/WAI/media/av/captions/) and when to use them. In summary, captions are for the same language as the audio and subtitles are for different languages.
+
+Transcripts are nice to have, but only required for video in WCAG 2.1 AAA (we usually only target AA). Transcripts have an added SEO benefit.
 
 ### Example
 
@@ -37,8 +42,6 @@ WEBVTT
 ```
 
 You can use YouTube's Automatic Caption feature, download the SRT file, [convert it to VTT](https://subtitletools.com/convert-to-vtt-online) and edit the captions from there. Note: SRT captions are not supported in HTML5.
-
-Also, you can consider an audio transcript. Transcripts have an added SEO benefit.
 
 ## Video formats
 
