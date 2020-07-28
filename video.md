@@ -45,6 +45,11 @@ WEBVTT
 
 You can use YouTube's Automatic Caption feature, download the SRT file, [convert it to VTT](https://subtitletools.com/convert-to-vtt-online) and edit the captions from there. Note: SRT captions are not supported in HTML5.
 
+## Third-party services
+
+* [Vimeo's compression guidelines](https://vimeo.com/help/compression)
+* [YouTube's compression guidelines](https://support.google.com/youtube/answer/1722171?hl=en)
+
 ## Video formats
 
 Read [MDN's video codec guide](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs) for more information on video codecs and containers.
@@ -57,13 +62,13 @@ In general, we should use the following:
 | Safari & Edge     | MP4       | HEVC        | AAC         |
 | Other Browsers    | MP4       | H.264       | AAC         |
 
-Note: H.264 is compatible with Safari and Edge, but HEVC is a newer format and allows Safari and Edge to take advantage of it.
+Note: H.264 is compatible with Safari and Edge, but HEVC is a newer format that offers a better quality/size ratio than H.264.
 
 ## Chroma subsampling
 
-Chroma subsampling is a great way of reducing file size by keeping the luma (luminance) data, but reducing some of the color information. 4:4:4 considered no subsampling. 4:2:2 and 4:2:0 are common. If there is fine detail or fine text in the video, you might need to play around with the chroma subsampling to make it work.
+Chroma subsampling is a great way of reducing file size by keeping the luma data, but reducing some of the color information. 4:4:4 has no subsampling and has better quality but larger file sizes. 4:2:2 and 4:2:0 are common subsampling methods. If there is fine detail or fine text in the video, you might need to play around with the chroma subsampling to make it work.
 
-Below, the `-pix_fmt` argument allows us to choose the chroma subsampling. For most web purposes 8-bit 4:2:0 should be fine. If you want to have the greatest amount of detail, consider 8-bit 4:4:4. Before going beyond 4:2:0, check the original chroma subsampling of the source video.
+Below, the `-pix_fmt` argument allows us to choose the chroma subsampling. For most web purposes 8-bit 4:2:0 should be fine. If you want to have the greatest amount of detail, consider 8-bit 4:4:4. Before going beyond 4:2:0, check the original chroma subsampling of the source video. 10-bit is also an option and is great for production, but it likely too large for practical use.
 
 * [Understanding chroma subsampling](https://en.wikipedia.org/wiki/Chroma_subsampling)
 * [Chroma subsampling options](https://trac.ffmpeg.org/wiki/Chroma%20Subsampling)
