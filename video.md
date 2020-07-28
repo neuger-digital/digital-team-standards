@@ -84,12 +84,9 @@ The Constant Rate Factor sets the size/quality balance. 0 is best quality and la
 
 ## Video conversion
 
-Ideally, convert using an uncompressed or high quality original.
+Ideally, convert using an uncompressed or high quality original. Much of this information comes from [Better Web Video with AV1 Codec](https://evilmartians.com/chronicles/better-web-video-with-av1-codec).
 
-We will do video conversions using ffmpeg.
-
-On a Mac you can install using Homebrew:
-
+We will do video conversions using ffmpeg. On a Mac you can install using Homebrew:
 
 ```
 brew install ffmpeg
