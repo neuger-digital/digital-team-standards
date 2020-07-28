@@ -21,6 +21,8 @@ If there is no audio, captions are not needed, but consider an `aria-label` attr
 
 We create captions using the [WebVTT format (.vtt)](https://www.w3.org/TR/webvtt/).
 
+You can use YouTube's Automatic Caption feature, download the SRT file, [convert it to VTT](https://subtitletools.com/convert-to-vtt-online) and edit the captions from there. Note: SRT captions are not supported in HTML5.
+
 ### Does my video need captions or subtitles?
 
 Read about the [difference between captions and subtitles](https://www.w3.org/WAI/media/av/captions/) and when to use them. In summary, captions are for the same language as the audio and subtitles are for different languages.
@@ -42,8 +44,6 @@ WEBVTT
 - What?
 - Where are we now?
 ```
-
-You can use YouTube's Automatic Caption feature, download the SRT file, [convert it to VTT](https://subtitletools.com/convert-to-vtt-online) and edit the captions from there. Note: SRT captions are not supported in HTML5.
 
 ## Third-party services
 
