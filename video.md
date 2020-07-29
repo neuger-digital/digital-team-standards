@@ -15,7 +15,7 @@ For all video with audio, we need captions and can't flash anything more than th
 ](https://www.w3.org/WAI/WCAG21/quickref/#audio-description-prerecorded)
 * [2.3.1 – Three Flashes or Below Threshold](https://www.w3.org/WAI/WCAG21/quickref/#three-flashes-or-below-threshold)
 
-If there is no audio, captions are not needed, but consider an `aria-label` attribute on the video tag to explain to users what's happening in the video.
+If there is no audio, captions are not needed, but consider an `aria-label` attribute on the video element to explain to users what's happening in the video.
 
 ## Captions
 
@@ -28,6 +28,8 @@ You can use YouTube's Automatic Caption feature, download the SRT file, [convert
 Read about the [difference between captions and subtitles](https://www.w3.org/WAI/media/av/captions/) and when to use them. In summary, captions are for the same language as the audio and subtitles are for different languages.
 
 Transcripts are nice to have, but only required for video in WCAG 2.1 AAA (we usually only target AA). Transcripts have an added SEO benefit.
+
+When creating subtitles, you can create a separate VTT file for each langauge.
 
 ### Example
 
@@ -56,15 +58,15 @@ Read [MDN's video codec guide](https://developer.mozilla.org/en-US/docs/Web/Medi
 
 In general, we should use the following:
 
-| Browser Support   | Container | Video Codec | Audio Codec |
-|-------------------|-----------|-------------|-------------|
-| Chrome & Firefox  | MP4       | AV1         | Opus        |
-| Safari & Edge     | MP4       | HEVC        | AAC         |
-| Other Browsers    | MP4       | H.264       | AAC         |
+| Browser Support   | Container | Video Codec  | Audio Codec |
+|-------------------|-----------|--------------|-------------|
+| Chrome & Firefox  | MP4       | AV1          | Opus        |
+| Safari & Edge     | MP4       | HEVC (H.265) | AAC         |
+| Other Browsers    | MP4       | H.264        | AAC         |
 
 Note: H.264 is compatible with Safari and Edge, but HEVC is a newer format that offers a better quality/size ratio than H.264.
 
-## Chroma subsampling
+### Chroma subsampling
 
 Chroma subsampling is a great way of reducing file size by keeping the luma data, but reducing some of the color information. 4:4:4 has no subsampling and has better quality but larger file sizes. 4:2:2 and 4:2:0 are common subsampling methods. If there is fine detail or fine text in the video, you might need to play around with the chroma subsampling to make it work.
 
@@ -73,30 +75,29 @@ Below, the `-pix_fmt` argument allows us to choose the chroma subsampling. For m
 * [Understanding chroma subsampling](https://en.wikipedia.org/wiki/Chroma_subsampling)
 * [Chroma subsampling options](https://trac.ffmpeg.org/wiki/Chroma%20Subsampling)
 
-## CRF values
+### CRF values
 
 The Constant Rate Factor sets the size/quality balance. 0 is best quality and largest file size. Based on Facebook's research, below are roughly equivalent values for H.264 and AV1.
 
 
-| H.264        | AV1          | HEVC         | Quality |
+| H.264        | AV1          | HEVC (H.265) | Quality |
 |--------------|--------------|--------------|---------|
-| 0            | 0            |              | Best    |
+| 0            | 0            | 0            | Best    |
 | 19           | 27           |              |         |
 |              | 30 (default) |              |         |
-|              |              | 28 (default) |         |
-| 23 (default) | 33           |              |         |
+| 23 (default) | 33           | 28 (default) |         |
 | 27           | 39           |              |         |
 | 31           | 45           |              |         |
 | 35           | 51           |              |         |
 | 39           | 57           |              |         |
-| 51           | 61           |              | Worst   |
+| 51           | 61           | 51           | Worst   |
 
 
-## Video conversion
+### Video encoding
 
 Ideally, convert using an uncompressed or high quality original. Much of this information comes from [Better Web Video with AV1 Codec](https://evilmartians.com/chronicles/better-web-video-with-av1-codec).
 
-We will do video conversions using ffmpeg. On a Mac you can install using Homebrew:
+We will do video encoding using ffmpeg. On a Mac you can install using Homebrew on the Mac:
 
 ```
 brew install ffmpeg
@@ -106,23 +107,58 @@ Follow [this guide for Windows](https://www.wdiaz.org/how-to-install-ffmpeg-on-w
 
 For each of the conversions below, replace SOURCE.mov with your source file. Adjust the crf number as needed. Consider the chroma subsampling needed.
 
-### AV1 conversion
+If you want to visualize the loss in quality, you can blend the original and compressed videos together:
 
 ```
-ffmpeg -i SOURCE.mov -map_metadata -1 -c:a libopus -c:v libaom-av1 -crf 34 -b:v 0 -pix_fmt yuv420p -movflags +faststart -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -strict experimental video.av1.mp4
+ffmpeg -i original.mp4 -i compressed.mp4 -filter_complex "blend=all_mode=difference" -c:v libx264 -crf 10 -c:a copy diff.mp4
 ```
 
-### H.264 conversion
+View diff.mp4 to see the difference. You can use this to test different encodings, CRF values and chroma subsamplings.
+
+#### Compression comparison
+
+Test clip: 1920x1080, MP4, H.264, AAC, 5.67 seconds, 10.2 MB
+
+|Quality | Codec (CRF)  | File size |
+|--------|--------------|-----------|
+|Great   | H.264 (24)   | 1615 KB   |
+|Great   | HEVC (28)    | 944 KB    |
+|Great   | AV1 (42)     | 606 KB    |
+|Good    | H.264 (28)   | 836 KB    |
+|Good    | HEVC (30)    | 703 KB    |
+
+#### AV1 encoding
+
+AV1 is impressive! CRF at 42 still looks great based on our tests and is far smaller in file size. Currently, libaom is very slow, so only compress using at 42 for now. If you run into quality issues, you can always lower the CRF. As AV1 becomes more popular, we will find the best library to use for encoding.
 
 ```
-ffmpeg -i SOURCE.mov -map_metadata -1 -c:a libfdk_aac -c:v libx264 -crf 24 -preset veryslow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" video.h264.mp4
+ffmpeg -i SOURCE.mov -map_metadata -1 -c:a libopus -b:a 128k -c:v libaom-av1 -crf 42 -b:v 0 -pix_fmt yuv420p -movflags +faststart -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -strict experimental video.av1.42.mp4
 ```
 
-### HEVC conversion
+#### H.264 encoding
+
+CRF at 24 looked great on tests we've done. CRF at 31 was acceptable but artifacts are starting to become noticeable. CRF at 28 produced great quality without much quality loss. We would recommend trying both 24 and 28.
+
 
 ```
-ffmpeg -i SOURCE.mov -map_metadata -1 -c:a libfdk_aac -c:v libx265 -crf 24 -preset veryslow -pix_fmt yuv420p -movflags +faststart -tag:v hvc1 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" video.hevc.mp4
+ffmpeg -i SOURCE.mov -map_metadata -1 -c:a libfdk_aac -b:a 128k -c:v libx264 -crf 24 -preset veryslow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" video.h264.24.mp4
+
+ffmpeg -i SOURCE.mov -map_metadata -1 -c:a libfdk_aac -b:a 128k -c:v libx264 -crf 28 -preset veryslow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" video.h264.28.mp4
 ```
+
+Note: libfdk_aac is better than aac, but you might need to install libfdk_aac separately.
+
+#### HEVC (H.265) encoding
+
+CRF at 28 had great results. CRF at 32 started to have some artifacts, but they weren't too noticeable. We would recommend trying both 28 and 30.
+
+```
+ffmpeg -i SOURCE.mov -map_metadata -1 -c:a libfdk_aac -b:a 128k -c:v libx265 -crf 28 -preset veryslow -pix_fmt yuv420p -movflags +faststart -tag:v hvc1 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" video.hevc.28.mp4
+
+ffmpeg -i SOURCE.mov -map_metadata -1 -c:a libfdk_aac -b:a 128k -c:v libx265 -crf 30 -preset veryslow -pix_fmt yuv420p -movflags +faststart -tag:v hvc1 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" video.hevc.30.mp4
+```
+
+Note: libfdk_aac is better than aac, but you might need to install libfdk_aac separately.
 
 ## Video HTML
 
@@ -139,7 +175,7 @@ Consider a poster file and making it 1280x720.
 </video>
 ```
 
-## Video Metadata
+## Video metadata
 
 ### JSON-LD
 
