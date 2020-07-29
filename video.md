@@ -29,7 +29,7 @@ Read about the [difference between captions and subtitles](https://www.w3.org/WA
 
 Transcripts are nice to have, but only required for video in WCAG 2.1 AAA (we usually only target AA). Transcripts have an added SEO benefit.
 
-When creating subtitles, you can create a separate VTT file for each langauge.
+When creating subtitles, you can create a separate VTT file for each language.
 
 ### Example
 
@@ -77,20 +77,22 @@ Below, the `-pix_fmt` argument allows us to choose the chroma subsampling. For m
 
 ### CRF values
 
-The Constant Rate Factor sets the size/quality balance. 0 is best quality and largest file size. Based on Facebook's research, below are roughly equivalent values for H.264 and AV1.
+The Constant Rate Factor sets the size/quality balance. 0 is best quality and largest file size. Based on Facebook's research, below are roughly equivalent values for H.264 and AV1. Our recommendations are labeled **rec**.
 
 
-| H.264        | AV1          | HEVC (H.265) | Quality |
-|--------------|--------------|--------------|---------|
-| 0            | 0            | 0            | Best    |
-| 19           | 27           |              |         |
-|              | 30 (default) |              |         |
-| 23 (default) | 33           | 28 (default) |         |
-| 27           | 39           |              |         |
-| 31           | 45           |              |         |
-| 35           | 51           |              |         |
-| 39           | 57           |              |         |
-| 51           | 61           | 51           | Worst   |
+| H.264        | AV1          | HEVC (H.265)          | Quality |
+|--------------|--------------|-----------------------|---------|
+| 0            | 0            | 0                     | Best    |
+| 19           | 27           |                       |         |
+|              | 30 (default) |                       |         |
+| 23 (default) | 33           | **28 (rec, default)** |         |
+| **24 (rec)** |              |                       |         |
+| 27           | 39           |                       |         |
+|              | **42 (rec)** |                       |         |
+| 31           | 45           |                       |         |
+| 35           | 51           |                       |         |
+| 39           | 57           |                       |         |
+| 51           | 61           | 51                    | Worst   |
 
 
 ### Video encoding
@@ -195,6 +197,8 @@ Consider a poster file and making it 1280x720.
 * If there are a lot of videos, consider a [video sitemap](https://support.google.com/webmasters/answer/80471)
 
 #### Example
+
+Add the `VIDEO_NAME`, `VIDEO_URL`, `VIDEO_THUMBNAIL`, `VIDEO_DESCRIPTION` and update the duration and uploadDate.
 
 ```
 <script type="application/ld+json">
