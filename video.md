@@ -198,7 +198,7 @@ Consider a poster file and making it 1280x720.
 
 #### Example
 
-Add the `VIDEO_NAME`, `VIDEO_URL`, `VIDEO_THUMBNAIL`, `VIDEO_DESCRIPTION` and update the duration and uploadDate.
+Add the `VIDEO_NAME`, `VIDEO_URL`, `VIDEO_THUMBNAIL`, `VIDEO_DESCRIPTION` and update the `duration` and `uploadDate`.
 
 ```
 <script type="application/ld+json">
