@@ -110,7 +110,8 @@ For each of the conversions below, replace SOURCE.mov with your source file. Adj
 If you want to visualize the loss in quality, you can blend the original and compressed videos together:
 
 ```
-ffmpeg -i original.mp4 -i compressed.mp4 -filter_complex "blend=all_mode=difference" -c:v libx264 -crf 10 -c:a copy diff.mp4
+ffmpeg -i original.mp4 -i compressed.mp4 -filter_complex "blend=all_mode=difference" \
+-c:v libx264 -crf 10 -c:a copy diff.mp4
 ```
 
 View diff.mp4 to see the difference. You can use this to test different encodings, CRF values and chroma subsamplings.
@@ -132,7 +133,9 @@ Test clip: 1920x1080, MP4, H.264, AAC, 5.67 seconds, 10.2 MB
 AV1 is impressive! CRF at 42 still looks great based on our tests and is far smaller in file size. Currently, libaom is very slow, so only compress using at 42 for now. If you run into quality issues, you can always lower the CRF. As AV1 becomes more popular, we will find the best library to use for encoding.
 
 ```
-ffmpeg -i SOURCE.mov -map_metadata -1 -c:a libopus -b:a 128k -c:v libaom-av1 -crf 42 -b:v 0 -pix_fmt yuv420p -movflags +faststart -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -strict experimental video.av1.42.mp4
+ffmpeg -i SOURCE.mov -map_metadata -1 -c:a libopus -b:a 128k \
+-c:v libaom-av1 -crf 42 -b:v 0 -pix_fmt yuv420p -movflags +faststart \
+-vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -strict experimental video.av1.42.mp4
 ```
 
 #### H.264 encoding
@@ -141,9 +144,13 @@ CRF at 24 looked great on tests we've done. CRF at 31 was acceptable but artifac
 
 
 ```
-ffmpeg -i SOURCE.mov -map_metadata -1 -c:a libfdk_aac -b:a 128k -c:v libx264 -crf 24 -preset veryslow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" video.h264.24.mp4
+ffmpeg -i SOURCE.mov -map_metadata -1 -c:a libfdk_aac -b:a 128k \
+-c:v libx264 -crf 24 -preset veryslow -profile:v main -pix_fmt yuv420p \
+-movflags +faststart -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" video.h264.24.mp4
 
-ffmpeg -i SOURCE.mov -map_metadata -1 -c:a libfdk_aac -b:a 128k -c:v libx264 -crf 28 -preset veryslow -profile:v main -pix_fmt yuv420p -movflags +faststart -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" video.h264.28.mp4
+ffmpeg -i SOURCE.mov -map_metadata -1 -c:a libfdk_aac -b:a 128k \
+-c:v libx264 -crf 28 -preset veryslow -profile:v main -pix_fmt yuv420p \
+-movflags +faststart -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" video.h264.28.mp4
 ```
 
 Note: libfdk_aac is better than aac, but you might need to install libfdk_aac separately.
@@ -153,9 +160,13 @@ Note: libfdk_aac is better than aac, but you might need to install libfdk_aac se
 CRF at 28 had great results. CRF at 32 started to have some artifacts, but they weren't too noticeable. We would recommend trying both 28 and 30.
 
 ```
-ffmpeg -i SOURCE.mov -map_metadata -1 -c:a libfdk_aac -b:a 128k -c:v libx265 -crf 28 -preset veryslow -pix_fmt yuv420p -movflags +faststart -tag:v hvc1 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" video.hevc.28.mp4
+ffmpeg -i SOURCE.mov -map_metadata -1 -c:a libfdk_aac -b:a 128k \
+-c:v libx265 -crf 28 -preset veryslow -pix_fmt yuv420p -movflags +faststart \
+-tag:v hvc1 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" video.hevc.28.mp4
 
-ffmpeg -i SOURCE.mov -map_metadata -1 -c:a libfdk_aac -b:a 128k -c:v libx265 -crf 30 -preset veryslow -pix_fmt yuv420p -movflags +faststart -tag:v hvc1 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" video.hevc.30.mp4
+ffmpeg -i SOURCE.mov -map_metadata -1 -c:a libfdk_aac -b:a 128k \
+-c:v libx265 -crf 30 -preset veryslow -pix_fmt yuv420p -movflags +faststart \
+-tag:v hvc1 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" video.hevc.30.mp4
 ```
 
 Note: libfdk_aac is better than aac, but you might need to install libfdk_aac separately.
