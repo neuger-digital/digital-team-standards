@@ -80,19 +80,18 @@ Below, the `-pix_fmt` argument allows us to choose the chroma subsampling. For m
 The Constant Rate Factor sets the size/quality balance. 0 is best quality and largest file size. Based on Facebook's research, below are roughly equivalent values for H.264 and AV1. Our recommendations are labeled **rec**.
 
 
-| H.264        | AV1          | HEVC (H.265)          | Quality |
-|--------------|--------------|-----------------------|---------|
-| 0            | 0            | 0                     | Best    |
-| 19           | 27           |                       |         |
-|              | 30 (default) |                       |         |
-| 23 (default) | 33           | **28 (rec, default)** |         |
-| **24 (rec)** |              |                       |         |
-| 27           | 39           |                       |         |
-|              | **42 (rec)** |                       |         |
-| 31           | 45           |                       |         |
-| 35           | 51           |                       |         |
-| 39           | 57           |                       |         |
-| 51           | 61           | 51                    | Worst   |
+| Quality   | H.264        | AV1          | HEVC (H.265)          |
+|-----------|--------------|--------------|-----------------------|
+| Best      | 0            | 0            | 0                     |
+|           | 19           | 27           |                       |
+|           |              | 30 (default) |                       |
+|           | 23 (default) | 33           |                       |
+| Great     | **24 (rec)** | **42 (rec)** | **28 (rec, default)** |
+| Good      | **28 (rec)** |              | **30 (rec)**          |
+| Ok        | 31           | 45           |                       |
+|           | 35           | 51           |                       |
+|           | 39           | 57           |                       |
+| Worst     | 51           | 61           | 51                    |
 
 
 ### Video encoding
