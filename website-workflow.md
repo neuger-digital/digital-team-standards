@@ -8,7 +8,7 @@
 5. Make the sharing experience with clients better
     * More consistency with which links we share with clients
     * No self-signed certificate browser issues
-  * Have up-to-date website content when available
+    * Have up-to-date website content when available
 
 ## Environments
 * **Local:** code is created on a developer’s computer
