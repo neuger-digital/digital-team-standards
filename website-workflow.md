@@ -19,7 +19,7 @@
 
 ## Workflow Diagram
 See diagram:
-[Neuger website workflow diagram!](/files/digital-team-workflow-2020-07.pdf)
+![Neuger website workflow diagram](/files/digital-team-workflow-2020-07.pdf)
 
 ## Workflow Considerations
 [See workflow considerations (private)](https://docs.google.com/spreadsheets/d/1re-2sJKqzBTwzXAgNnww9pzS0a2O2DqiJVuBqluvhbU/edit#gid=0)
