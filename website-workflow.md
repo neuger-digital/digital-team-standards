@@ -8,7 +8,7 @@
 5. Make the sharing experience with clients better
     * More consistency with which links we share with clients
     * No self-signed certificate browser issues
-    * Have up-to-date website content when available
+  * Have up-to-date website content when available
 
 ## Environments
 * **Local:** code is created on a developer’s computer
@@ -18,7 +18,8 @@
 * **Live:** code changes are deployed; database and file changes are made manually
 
 ## Workflow Diagram
-[See diagram (private)](https://drive.google.com/file/d/1J1s1l1W2FkwvBxpwPKJbHlX8C-Z51Hgo/view)
+See diagram:
+[Neuger website workflow diagram!](/files/digital-team-workflow-2020-07.pdf)
 
 ## Workflow Considerations
 [See workflow considerations (private)](https://docs.google.com/spreadsheets/d/1re-2sJKqzBTwzXAgNnww9pzS0a2O2DqiJVuBqluvhbU/edit#gid=0)
