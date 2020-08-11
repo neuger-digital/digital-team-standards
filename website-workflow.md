@@ -18,7 +18,7 @@
 * **Live:** code changes are deployed; database and file changes are made manually
 
 ## Workflow Diagram
-[See diagram](https://github.com/neuger-digital/digital-team-standards/files/digital-team-workflow-2020-07.pdf)
+[See diagram (private)](https://drive.google.com/file/d/1J1s1l1W2FkwvBxpwPKJbHlX8C-Z51Hgo/view)
 
 ## Workflow Considerations
 [See workflow considerations (private)](https://docs.google.com/spreadsheets/d/1re-2sJKqzBTwzXAgNnww9pzS0a2O2DqiJVuBqluvhbU/edit#gid=0)
