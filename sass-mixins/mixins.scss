@@ -1,0 +1,19 @@
+// mixins.scss
+
+@mixin vertical-center-parent {
+	white-space: nowrap;
+
+	&::before {
+		content: '';
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+		margin-right: -.25rem;
+	}
+}
+
+@mixin vertical-center-child {
+	white-space: normal;
+	display: inline-block;
+	vertical-align: middle;
+}

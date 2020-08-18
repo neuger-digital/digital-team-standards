@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<header class="${1}">
+	${0}
+</header> <!--.${1}-->]]></content>
+	<tabTrigger>header</tabTrigger>
+	<scope>text.html</scope>
+</snippet>

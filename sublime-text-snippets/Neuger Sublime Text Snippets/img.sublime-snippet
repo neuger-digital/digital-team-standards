@@ -1,0 +1,5 @@
+<snippet>
+	<content><![CDATA[<img src="${1:https://via.placeholder.com/600x400}" alt="${0:}" />]]></content>
+	<tabTrigger>img</tabTrigger>
+	<scope>text.html</scope>
+</snippet>

@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[<${1}section class="panel panel--${2}${3}">
+	<div class="container">
+		<div class="row">
+			${0}
+		</row><!--.row-->
+	</container><!--.container-->
+</${1}section><!--.panel-${2}-->]]></content>
+	<tabTrigger>panel</tabTrigger>
+	<scope>text.html</scope>
+</snippet>

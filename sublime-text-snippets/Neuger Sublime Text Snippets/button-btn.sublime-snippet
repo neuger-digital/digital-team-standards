@@ -1,0 +1,5 @@
+<snippet>
+	<content><![CDATA[<button class="btn${2}">${0}</button>]]></content>
+	<tabTrigger>button</tabTrigger>
+	<scope>text.html</scope>
+</snippet>
