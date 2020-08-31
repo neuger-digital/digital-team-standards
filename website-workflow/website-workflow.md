@@ -18,7 +18,7 @@
 * **Live:** code changes are deployed; database and file changes are made manually
 
 ## Workflow Diagram
-![Neuger website workflow diagram](/files/digital-team-workflow-2020-07.png)
+![Neuger website workflow diagram](images/digital-team-workflow-2020-07.png)
 
 ## Workflow Considerations
 [See workflow considerations (private)](https://docs.google.com/spreadsheets/d/1re-2sJKqzBTwzXAgNnww9pzS0a2O2DqiJVuBqluvhbU/edit#gid=0)
