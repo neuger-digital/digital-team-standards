@@ -2,6 +2,9 @@
 
 ## Database changes
 
+Be careful, especially with live databases! Back up databases before running these commands.
+
+When in doubt, use the `--dry-run` first before executing the commands below.
 
 ### Local
 
