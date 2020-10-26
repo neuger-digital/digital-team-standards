@@ -26,10 +26,10 @@ These are instructions for installing this site on a Mac.
 ### Setting up an existing site
 * Create a directory with the _site-name_, go into it
 * Run `lando init` to initialize the environment
-	* Choose 'github'
+	* Choose _github_
 	* Select your user
-	* Select the repo 'neuger-digital/site-name'
-	* Use the 'pantheon' recipe
+	* Select the repo _neuger-digital/site-name_
+	* Use the _pantheon_ recipe
 	* Select the site _site-name_
 * Run `lando start`
 * Run `lando composer install --no-ansi --no-interaction --optimize-autoloader --no-progress` to download dependencies
