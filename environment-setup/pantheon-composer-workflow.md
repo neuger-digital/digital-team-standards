@@ -35,7 +35,7 @@ These are instructions for installing this site on a Mac.
 * Run `lando composer install --no-ansi --no-interaction --optimize-autoloader --no-progress` to download dependencies
 * Run `lando pull --code=none` to download the media files and database from Pantheon
 * Commit and push your project and it should start up a new CircleCI project. In that project you'll want to access Project Settings and go to Environemnt Variables and add the following:
-	* TERMINUS_SITE:  Name of the Pantheon site to run tests on, e.g. my_site
+	* TERMINUS_SITE:  Name of the Pantheon site to run tests on, e.g. _site-name_
 	* TERMINUS_TOKEN: The Pantheon machine token
 	* GITHUB_TOKEN:   The GitHub personal access token
 	* GIT_EMAIL:      The email address to use when making commits
