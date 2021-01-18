@@ -30,11 +30,12 @@ terminus wp sitename.test -- search-replace 'dev-sitename.pantheonsite.io' 'site
 ### Live
 
 ```
-terminus wp sitename.live -- search-replace 'sitename.neuger.site' 'sitename.ext'
-terminus wp sitename.live -- search-replace 'test-sitename.neuger.site' 'sitename.ext'
-terminus wp sitename.live -- search-replace 'test-sitename.pantheonsite.io' 'sitename.ext'
+terminus wp sitename.live -- search-replace 'sitename.lndo.site' 'sitename.ext'
 terminus wp sitename.live -- search-replace 'dev-sitename.neuger.site' 'sitename.ext'
 terminus wp sitename.live -- search-replace 'dev-sitename.pantheonsite.io' 'sitename.ext'
+terminus wp sitename.live -- search-replace 'test-sitename.neuger.site' 'sitename.ext'
+terminus wp sitename.live -- search-replace 'test-sitename.pantheonsite.io' 'sitename.ext'
+terminus wp sitename.live -- search-replace 'sitename.neuger.site' 'sitename.ext'
 terminus wp sitename.live -- search-replace 'http://sitename.ext' 'https://sitename.ext'
 
 ```
