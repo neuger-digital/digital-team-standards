@@ -39,3 +39,17 @@ terminus wp sitename.live -- search-replace 'sitename.neuger.site' 'sitename.ext
 terminus wp sitename.live -- search-replace 'http://sitename.ext' 'https://sitename.ext'
 
 ```
+
+## Arcustech
+
+When adding a new site to Arcustech, here are some things to remember.
+
+### SSL
+
+Arcustech must use a proxy or load balancer and so for us to not get a 'too many redirects' issue with our sites, we need to add the follow bit of code to our configuration file:
+
+```
+if ($_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
+	$_SERVER['HTTPS'] ='on';
+}
+```
