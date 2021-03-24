@@ -23,7 +23,7 @@ terminus wp sitename.dev -- search-replace 'sitename.lndo.site' 'dev-sitename.ne
 ### Test
 
 ```
-terminus wp sitename.live -- search-replace 'sitename.lndo.site' 'sitename.neuger.site'
+terminus wp sitename.test -- search-replace 'sitename.lndo.site' 'sitename.neuger.site'
 terminus wp sitename.test -- search-replace 'dev-sitename.neuger.site' 'sitename.neuger.site'
 terminus wp sitename.test -- search-replace 'dev-sitename.pantheonsite.io' 'sitename.neuger.site'
 ```
