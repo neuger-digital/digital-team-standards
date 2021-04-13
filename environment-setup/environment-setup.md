@@ -29,7 +29,7 @@ config:
   # Disable the REDIS cache
   cache: false
 ```
-Disabling the index and and cache will prevent Docker from starting up those containers and will reduce the load on your computer.
+Disabling the index and cache will prevent Docker from starting up those containers and will reduce the load on your computer.
 
 To finish up:
 * Run `lando start`
