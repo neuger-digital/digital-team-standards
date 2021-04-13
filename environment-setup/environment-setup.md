@@ -26,8 +26,6 @@ config:
   site: PANTHEON_SITE_MACHINE_NAME
   # Disable the SOLR index
   index: false
-  # Disable the VARNISH edge
-  edge: false
   # Disable the REDIS cache
   cache: false
 ```
