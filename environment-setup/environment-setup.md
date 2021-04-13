@@ -10,12 +10,12 @@ Lando is an easy way to work locally with Pantheon that doesn't require much con
 
 #### Setting up a site locally for the first time
 
-To get started, make sure that you have a Pantheon machine token set up on your computer and then nagivate to your `~/Sites` directory. Create a directory that is named the same as the sites domain (without the TLD and any subdomains should replace the `.` with a `-`) and then go into that directory. From there follow these steps:
+To get started, make sure that you have a Pantheon machine token set up on your computer and then nagivate to your `~/Sites` directory. Create a directory that is named the same as the sites domain (without the TLD and any subdomains should replace the `.` with a `-`) and then go into that directory. This will be the same as the "PANTHEON_SITE_MACHINE_NAME" that you'll see below. From there follow these steps:
 * Run `lando init`
 * If we are using the [Pantheon Composer CircleCI Workflow](https://github.com/neuger-digital/digital-team-standards/blob/master/environment-setup/pantheon-composer-workflow.md) then follow those steps instead, otherwise;
 * Choose `pantheon` (this is the Lando recipe)
 * Choose your email from the list (it will likely just have one available, based on the machine token)
-* Choose the site (also retreived from the machine token)
+* Choose the site
 
 After the initialization is complete, adjust the `.lando.yml` file to follow this structure:
 ```
