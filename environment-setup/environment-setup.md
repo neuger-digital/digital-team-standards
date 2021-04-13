@@ -66,13 +66,13 @@ Open TablePlus and start a new MySQL or MariaDB connection (doesn't really matte
 * Database: pantheon
 * To get the port you will need to run `lando info` and then look for `external_connection: { host: '127.0.0.1', port: '32769' },`. This port changes so you may have to find this port number each time you want to connect to the database locally. If the port is simply `true` that means you haven't started the containers.
 
-## Database changes
+### Bulk database changes
 
 If you wish to make bulk updates to the local database you can follow these steps. Be careful, especially with live databases! Back up databases before running these commands.
 
 When in doubt, use the `--dry-run` first before executing the commands below.
 
-### Local
+#### Local
 
 ```
 lando wp search-replace 'sitename.ext' 'sitename.lndo.site'
@@ -80,13 +80,13 @@ lando wp search-replace 'www.sitename.ext' 'sitename.lndo.site'
 lando wp search-replace 'http://sitename.lndo.site' 'https://sitename.lndo.site'
 ```
 
-### Dev
+#### Dev
 
 ```
 terminus wp sitename.dev -- search-replace 'sitename.lndo.site' 'dev-sitename.neuger.site'
 ```
 
-### Test
+#### Test
 
 ```
 terminus wp sitename.test -- search-replace 'sitename.lndo.site' 'sitename.neuger.site'
@@ -94,7 +94,7 @@ terminus wp sitename.test -- search-replace 'dev-sitename.neuger.site' 'sitename
 terminus wp sitename.test -- search-replace 'dev-sitename.pantheonsite.io' 'sitename.neuger.site'
 ```
 
-### Live
+#### Live
 
 ```
 terminus wp sitename.live -- search-replace 'sitename.lndo.site' 'sitename.ext'
