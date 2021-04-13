@@ -30,7 +30,7 @@ To finish up:
 * Run `lando pull --code=none` which will get the database and files
 * Check `git status` and if there are no local changes then `git pull` to get the code from the dev environment
 
-You'll be able to access the Pantheon site locally now with PANTHEON_SITE_MACHINE_NAME.lando.site.
+You'll be able to access the Pantheon site locally now with PANTHEON_SITE_MACHINE_NAME.lndo.site
 
 Happy coding!
 
