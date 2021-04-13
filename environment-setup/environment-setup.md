@@ -34,18 +34,18 @@ Disabling the index and cache will prevent Docker from starting up those contain
 To finish up:
 * Run `lando start`
 * Run `lando pull --code=none` which will get the database and files
-* Check `git status` and if there are no local changes then `git pull` to get the code from the dev environment
+* Check `git status` and if there are no local changes then `git pull` to get the code from the dev environment (or use Tower)
 
 You'll be able to access the Pantheon site locally now with `https://PANTHEON_SITE_MACHINE_NAME.lndo.site`.
 
 #### Returning to a site you've set up before
 
 If you have previously initialized a specific site on your machine, you don't have to go through the init process again. All you need to do is:
-* Navigate the the directory
+* Navigate to the directory
 * Run `lando start` and there you go, it's up an running
 * You may want to pull fresh code, files, and database, in that case:
 	* Run `lando pull --code=none` which pull the files and database and not code
-	* Run `git status` to check if there's any local changes and if not, run `git pull`
+	* Run `git status` to check if there's any local changes and if not, run `git pull` (or use Tower)
 
 That's it!
 
