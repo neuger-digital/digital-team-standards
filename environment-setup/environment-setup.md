@@ -34,6 +34,25 @@ You'll be able to access the Pantheon site locally now with `PANTHEON_SITE_MACHI
 
 Happy coding!
 
+## Local Lando
+
+The [Lando Docs](https://docs.lando.dev/config/pantheon.html) are pretty good, but here are some good takaways for other Lando things you might want to do.
+
+### Stopping Lando
+
+* Run `lando stop` if you just want to stop the current containers, but keep them
+* Run `lando restart` if you want to stop the current containers and start them up again
+* Run `lando destroy` if you want to get rid of the containers
+
+### Connecting to the DB locally
+
+Open TablePlus and start a new MySQL or MariaDB connection (doesn't really matter). Best practice for naming would be "PANTHEON_SITE_MACHINE_NAME (lando)" and then set the tag to local. 
+* Host: 127.0.0.1
+* User: pantheon
+* Password: pantheon
+* Database: pantheon
+* To get the port you will need to run `lando info` and then look for `external_connection: { host: '127.0.0.1', port: '32769' },`. This port changes so you may have to find this port number each time you want to connect to the DB locally. If the port is simply `true` that means you haven't started the containers.
+
 ## Database changes
 
 Be careful, especially with live databases! Back up databases before running these commands.
