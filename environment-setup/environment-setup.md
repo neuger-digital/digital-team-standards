@@ -1,5 +1,39 @@
 # Environment Setup
 
+## Getting Started with a Pantheon Site
+
+Lando is an easy way to work locally with Pantheon that doesn't require much configuration. To get started, make sure that you have a Pantheon machine token set up on your computer and then nagivate to your `~/Sites` directory. Create a directory that is named the same as the sites domain (without the TLD and any subdomains should replace the `.` with a `-`) and then go into that directory. From there follow these steps:
+* Run `lando init`
+* If we are using the [Pantheon Composer CircleCI Workflow](https://github.com/neuger-digital/digital-team-standards/blob/master/environment-setup/pantheon-composer-workflow.md) then follow those steps instead, otherwise;
+* Choose `pantheon` (this is the Lando recipe)
+* Choose your email from the list (it will likely just have one available, based on the machine token)
+* Choose the site (also retreived from the machine token)
+
+After the initialization is complete, adjust the `.lando.yml` file to follow this structure:
+```
+recipe: pantheon
+config:
+  framework: PANTHEON_SITE_FRAMEWORK
+  id: PANTHEON_SITE_ID
+  site: PANTHEON_SITE_MACHINE_NAME
+  # Disable the SOLR index
+  index: false
+  # Disable the VARNISH edge
+  edge: false
+  # Disable the REDIS cache
+  cache: false
+```
+Disabling the index, edge, and cache will prevent Docker from starting up those containers and will reduce the load on your computer.
+
+To finish up:
+* Run `lando start`
+* Run `lando pull --code=none` which will get the database and files
+* Check `git status` and if there are no local changes then `git pull` to get the code from the dev environment
+
+You'll be able to access the Pantheon site locally now with PANTHEON_SITE_MACHINE_NAME.lando.site.
+
+Happy coding!
+
 ## Database changes
 
 Be careful, especially with live databases! Back up databases before running these commands.
