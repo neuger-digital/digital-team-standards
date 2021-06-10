@@ -6,38 +6,50 @@ Be careful, especially with live databases! Back up databases before running the
 
 When in doubt, use the `--dry-run` first before executing the commands below.
 
-### Local
+### Test to Local
 
 ```
-lando wp search-replace 'sitename.ext' 'sitename.lndo.site'
-lando wp search-replace 'www.sitename.ext' 'sitename.lndo.site'
-lando wp search-replace 'http://sitename.lndo.site' 'https://sitename.lndo.site'
+lando wp search-replace 'sitename.neuger.site' 'sitename.lndo.site' --all-tables
+lando wp cache flush
 ```
 
-### Dev
+### Live to Local
 
 ```
-terminus wp sitename.dev -- search-replace 'sitename.lndo.site' 'dev-sitename.neuger.site'
+lando wp search-replace 'sitename.ext' 'sitename.lndo.site' --all-tables
+lando wp search-replace 'www.sitename.ext' 'sitename.lndo.site' --all-tables
+lando wp search-replace 'http://sitename.lndo.site' 'https://sitename.lndo.site' --all-tables
+lando wp cache flush
 ```
 
-### Test
+### Local to Dev
 
 ```
-terminus wp sitename.test -- search-replace 'sitename.lndo.site' 'sitename.neuger.site'
-terminus wp sitename.test -- search-replace 'dev-sitename.neuger.site' 'sitename.neuger.site'
-terminus wp sitename.test -- search-replace 'dev-sitename.pantheonsite.io' 'sitename.neuger.site'
+terminus wp sitename.dev -- search-replace 'sitename.lndo.site' 'dev-sitename.neuger.site' --all-tables
+terminus wp sitename.dev -- cache flush
 ```
 
-### Live
+### To Test
 
 ```
-terminus wp sitename.live -- search-replace 'sitename.lndo.site' 'sitename.ext'
-terminus wp sitename.live -- search-replace 'dev-sitename.neuger.site' 'sitename.ext'
-terminus wp sitename.live -- search-replace 'dev-sitename.pantheonsite.io' 'sitename.ext'
-terminus wp sitename.live -- search-replace 'test-sitename.neuger.site' 'sitename.ext'
-terminus wp sitename.live -- search-replace 'test-sitename.pantheonsite.io' 'sitename.ext'
-terminus wp sitename.live -- search-replace 'sitename.neuger.site' 'sitename.ext'
-terminus wp sitename.live -- search-replace 'http://sitename.ext' 'https://sitename.ext'
+terminus wp sitename.test -- search-replace 'sitename.lndo.site' 'sitename.neuger.site' --all-tables
+terminus wp sitename.test -- search-replace 'dev-sitename.neuger.site' 'sitename.neuger.site' --all-tables
+terminus wp sitename.test -- search-replace 'dev-sitename.pantheonsite.io' 'sitename.neuger.site' --all-tables
+terminus wp sitename.test -- cache flush
+```
+
+### To Live
+
+```
+terminus wp sitename.live -- search-replace 'sitename.lndo.site' 'sitename.ext' --all-tables
+terminus wp sitename.live -- search-replace 'dev-sitename.neuger.site' 'sitename.ext' --all-tables
+terminus wp sitename.live -- search-replace 'dev-sitename.pantheonsite.io' 'sitename.ext' --all-tables
+terminus wp sitename.live -- search-replace 'test-sitename.neuger.site' 'sitename.ext' --all-tables
+terminus wp sitename.live -- search-replace 'test-sitename.pantheonsite.io' 'sitename.ext' --all-tables
+terminus wp sitename.live -- search-replace 'live-sitename.pantheonsite.io' 'sitename.ext' --all-tables
+terminus wp sitename.live -- search-replace 'sitename.neuger.site' 'sitename.ext' --all-tables
+terminus wp sitename.live -- search-replace 'http://sitename.ext' 'https://sitename.ext' --all-tables
+terminus wp sitename.live -- cache flush
 
 ```
 
