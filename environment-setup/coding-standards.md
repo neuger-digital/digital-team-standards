@@ -129,3 +129,18 @@ Write JS code using ES6 and be sure to transpile to ES2015. Our preferred method
 
 * [js-example.js](js-example.js) – starter JavaScript file for our projects
 
+If you are using React, create separate JS files for each react component, import the components into the main JavaScript file and render the component in the main JavaScript file. Here is an example:
+
+	import Component from './Component';
+	...
+	init() {
+		...
+		this._initComponent();
+	},
+	...
+	_initComponent() {
+		if ( 0 < $( '.component-container' ).length ) {
+			ReactDOM.render( <Component />, $('.component-container')[0] );
+		}
+	}
+	...
