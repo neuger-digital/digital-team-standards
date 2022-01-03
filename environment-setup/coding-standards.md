@@ -44,34 +44,34 @@ You will need the following packages. Press `cmd p` in Sublime Text and type ins
 
 ## PHP CodeSniffer Setup
 
-Install PHP CodeSniffer
+Install PHP CodeSniffer:
 
 	brew doctor
 	brew install php-code-sniffer
 
-After that is done, you should be able to check that things installed correctly.
+After that is done, you should be able to check that things installed correctly:
 
 	phpcs -i
 
-Install wpcs and add to PHP CodeSniffer
+Install wpcs and add to PHP CodeSniffer:
 
 	mkdir ~/lib
 	cd ~/lib
 	git clone https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git ~/wpcs
 	phpcs --config-set installed_paths ~/lib/wpcs
 
-Add wpcs and PHP CodeSniffer to your current project in the composer.json file
+Add wpcs and PHP CodeSniffer to your current project in the composer.json file:
 
 	"require-dev": {
 	  "squizlabs/php_codesniffer": "*",
 	  "wp-coding-standards/wpcs": "*"
 	}
 
-Then install these packages
+Then install these packages:
 
 	composer install
 
-Go to SublimeText > Preferences > Package Settings > SublimeLinter > Settings
+Go to SublimeText > Preferences > Package Settings > SublimeLinter > Settings and add the following:
 
 	{
 		"debug": true,
@@ -96,6 +96,8 @@ Add the linting package to your project's `package.json` file:
 		...
 	}
 
+Install these packages with `npm install`.
+
 In the same directory as your `package.json` file, add the linter settings:
 
 * [.stylelintrc.json](.stylelintrc.json) – starter settings for our projects
@@ -112,6 +114,8 @@ Add the linting package to your project's `package.json` file:
 		"eslint": "*",
 		...
 	}
+
+Install these packages with `npm install`.
 
 In the same directory as your `package.json` file, add the linter settings:
 
