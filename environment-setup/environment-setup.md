@@ -110,10 +110,18 @@ terminus wp sitename.live -- search-replace 'dev-sitename.neuger.site' 'sitename
 terminus wp sitename.live -- search-replace 'dev-sitename.pantheonsite.io' 'sitename.ext' --all-tables
 terminus wp sitename.live -- search-replace 'test-sitename.neuger.site' 'sitename.ext' --all-tables
 terminus wp sitename.live -- search-replace 'test-sitename.pantheonsite.io' 'sitename.ext' --all-tables
+terminus wp sitename.live -- search-replace 'live-sitename.neuger.site' 'sitename.ext' --all-tables
 terminus wp sitename.live -- search-replace 'live-sitename.pantheonsite.io' 'sitename.ext' --all-tables
 terminus wp sitename.live -- search-replace 'sitename.neuger.site' 'sitename.ext' --all-tables
 terminus wp sitename.live -- search-replace 'http://sitename.ext' 'https://sitename.ext' --all-tables
 terminus wp sitename.live -- cache flush
+
+Additional replacements for adding wwws:
+terminus wp sitename.live -- search-replace 'http://sitename.ext' 'https://www.sitename.ext' --all-tables
+terminus wp sitename.live -- search-replace 'https://sitename.ext' 'https://www.sitename.ext' --all-tables
+
+Additional replacements for removing wwws:
+terminus wp sitename.live -- search-replace 'www.sitename.ext' 'sitename.ext' --all-tables
 
 ```
 
