@@ -57,7 +57,7 @@ Install wpcs and add to PHP CodeSniffer:
 
 	mkdir ~/lib
 	cd ~/lib
-	git clone https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git ~/wpcs
+	git clone https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git ~/lib/wpcs
 	phpcs --config-set installed_paths ~/lib/wpcs
 
 Add wpcs and PHP CodeSniffer to your current project in the composer.json file:
