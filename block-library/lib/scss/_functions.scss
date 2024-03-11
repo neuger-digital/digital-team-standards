@@ -1,0 +1,15 @@
+//THESE ARE EXAMPLE STYLES. ONY COPY WHAT IS ACTUALLY NEEDED AND CAREFULLY ADJUST ACCORDING TO NEW PROJECTS STYLES.
+
+
+@function rem($size: 16) {
+  @return ($size / 16) + rem;
+}
+
+@function encodecolor($string) {
+  @if type-of($string) == 'color' {
+        $hex: str-slice(ie-hex-str($string), 4);
+        $string:unquote("#{$hex}");
+    }
+    $string: '%23' + $string;
+  @return $string;
+}

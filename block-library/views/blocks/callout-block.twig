@@ -1,0 +1,21 @@
+{# Twig file for the callout block. Examine closely and edit as needed for new project. #}
+
+
+<section class="blocks callout-block {{ block.className }}">
+	<div class="container">
+		<div class="row">
+			<div class="callout-overlay">
+				<picture>
+					{% if image.src %}
+						<source srcset="{{ image.src|esc_url }}" media="(min-width: 800px)">
+						<img class="callout-image" src="{{ image_mobile.src }}" alt="{{ image.alt|esc_attr }}">
+					{% else %}
+						{# Adjust file path or name as needed. #}
+						<img class="callout-image" src="/images/placeholder-large.png" alt="">
+					{% endif %}
+				</picture>
+			</div>
+			{{ content }}
+		</div>
+	</div>
+</section>

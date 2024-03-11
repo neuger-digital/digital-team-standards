@@ -1,0 +1,125 @@
+//THESE ARE EXAMPLE STYLES. ONY COPY WHAT IS ACTUALLY NEEDED AND CAREFULLY ADJUST ACCORDING TO NEW PROJECTS STYLES.
+
+
+
+// Load old site dependencies
+// @import "../../style.css";
+
+$is-editor: true;
+
+// Load variables and fonts
+@import "fonts";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap');
+
+// Load Bootstrap includes
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
+@import "functions";
+
+// Variable overrides
+@import "custom";
+
+// Load Bootstrap includes
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/maps";
+@import "~bootstrap/scss/utilities";
+
+// Layout & components
+@import "~bootstrap/scss/root";
+// @import "~bootstrap/scss/reboot";
+// @import "~bootstrap/scss/type";
+// @import "~bootstrap/scss/images";
+// @import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+// @import "~bootstrap/scss/tables";
+// @import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+// @import "~bootstrap/scss/transitions";
+// @import "~bootstrap/scss/dropdown";
+// @import "~bootstrap/scss/button-group";
+// @import "~bootstrap/scss/nav";
+// @import "~bootstrap/scss/navbar";
+// @import "~bootstrap/scss/card";
+@import "~bootstrap/scss/accordion";
+// @import "~bootstrap/scss/breadcrumb";
+// @import "~bootstrap/scss/pagination";
+// @import "~bootstrap/scss/badge";
+// @import "~bootstrap/scss/alert";
+// @import "~bootstrap/scss/progress";
+// @import "~bootstrap/scss/list-group";
+// @import "~bootstrap/scss/close";
+// @import "~bootstrap/scss/toasts";
+// @import "~bootstrap/scss/modal";
+// @import "~bootstrap/scss/tooltip";
+// @import "~bootstrap/scss/popover";
+// @import "~bootstrap/scss/carousel";
+// @import "~bootstrap/scss/spinners";
+// @import "~bootstrap/scss/offcanvas";
+@import "mixins";
+@import "blocks";
+@import "panels";
+
+// Slick Carousel
+@import "slick-carousel/slick/slick.css";
+
+// Helpers
+@import "~bootstrap/scss/helpers";
+
+@if $is-editor {
+	h2, h3, h4, h5, h6 {
+		margin-top: 0 !important;
+		margin-bottom: 0.75rem !important;
+	}
+
+	p, ul, ol {
+		margin-top: 0 !important;
+		margin-bottom: 1rem !important;
+	}
+
+	.editor-styles-wrapper .container {
+	    padding-left: 20px;
+	    padding-right: 20px;
+	}
+
+
+	.editor-styles-wrapper {
+		-webkit-font-smoothing: antialiased;
+		-moz-font-smoothing: antialiased;
+		-o-font-smoothing: antialiased;
+
+		box-sizing: border-box;
+		font-family: $font-family-base !important;
+	}
+
+	.wp-block[data-align="center"] {
+		.container > .row {
+			justify-content: center;
+			text-align: center;
+		}
+
+		.is-layout-flex {
+			justify-content: center;
+		}
+	}
+
+	.wp-block[data-align=left] {
+		@include clearfix;
+	}
+
+	.wp-block[data-align=center] {
+		@include clearfix;
+	}
+
+	.wp-block[data-align=right] {
+		@include clearfix;
+	}
+
+	.wp-block[data-align=left] > * {
+		margin-right: 0;
+	}
+
+	.wp-block[data-align=right] > * {
+		margin-left: 0;
+	}
+}

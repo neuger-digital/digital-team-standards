@@ -1,0 +1,94 @@
+//THESE ARE EXAMPLE STYLES. ONY COPY WHAT IS ACTUALLY NEEDED AND CAREFULLY ADJUST ACCORDING TO NEW PROJECTS STYLES.
+
+
+
+$mobile-adjust-factor: 1.333333333333;
+$small-mobile-adjust-factor: 1.2;
+
+@mixin responsive-font-size($size: 24) {
+	@if ($size < 22) {
+		font-size: rem($size/$small-mobile-adjust-factor);
+	}
+
+	@else {
+		font-size: rem($size/$mobile-adjust-factor);
+	}
+
+	@include media-breakpoint-up(md) {
+		font-size: rem($size);
+	}
+}
+
+@mixin header-size($size: 16) {
+	font-size: rem($size / $mobile-adjust-factor);
+	font-weight: 700;
+	line-height: 1.2;
+
+	@include media-breakpoint-up(md) {
+		font-size: rem($size);
+	}
+}
+
+@mixin button($background: $red, $border: $red, $color: $white, $hover-background: $red-hover, $hover-border: $red-hover, $hover-color: $white) {
+	.wp-block-button {
+		.wp-block-button__link {
+			@extend .btn;
+			@include button-variant($background, $border, $color, $hover-background, $hover-border, $hover-color);
+			@include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius);
+			@include responsive-font-size(22);
+
+			background-color: $background;
+			color: $color;
+			text-decoration: none !important;
+			font-weight: 700;
+			margin: 15px 0 0;
+			padding: 15px 30px;
+
+			text-decoration: none;
+			display: inline-block;
+			text-align: center;
+			font-weight: $btn-font-weight;
+			line-height: 1.2;
+			transition: $transition-base;
+
+			&:hover {
+				background-color: $hover-background;
+				border-color: $hover-border;
+				color: $hover-color;
+			}
+		}
+
+		&.is-style-outline {
+			.wp-block-button__link {
+				@include button-outline-variant($background, $hover-background, transparent, $hover-background, $hover-background);
+				box-sizing: border-box;
+				background: transparent;
+				color: $background;
+
+				&:hover {
+					background-color: transparent;
+					border-color: $hover-background;
+					color: $hover-background;
+				}
+			}
+		}
+	}
+}
+
+@mixin wave-bottom($color: $purple) {
+	padding-bottom: 12%;
+
+	&:before {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		display: block;
+		content: "";
+		width: 100%;
+		padding-bottom: 11%;
+		background-repeat: no-repeat;
+		background-position: bottom;
+		background-size: cover;
+		background-image: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8"%3F><svg id="a" xmlns="http://www.w3.org/2000/svg" width="20in" height="2.06in" viewBox="0 0 1440 148"><rect x="-140" y="6.81" width="1684" height="148" fill="none" stroke-width="0"/><path d="m-47,59.71l31.2.1c22.8.1,45.4,3.4,66,9.7l11,3.4c21.5,6.6,44.3,11.4,67.8,14,77.7,8.7,157.6,7,234.5-5.1l157.3-24.7c43.3-6.8,88.4-7.7,132.2-2.6l279.5,32.4c86,10,174.2,9.9,260.2-.3l259.5-30.7c44.3-5.2,89.3-7.9,134.4-7.9h50.3v147.8H-43.7l-3.3-136.1Z" fill="'+encodecolor($color)+'" stroke-width="0"/></svg>');
+	}
+}

@@ -1,0 +1,110 @@
+//THESE ARE EXAMPLE STYLES. ONY COPY WHAT IS ACTUALLY NEEDED AND CAREFULLY ADJUST ACCORDING TO NEW PROJECTS STYLES.
+
+
+$enable-dark-mode: false;
+
+$purple: #3C254F;
+$yellow: #F5C854;
+$red: #982615;
+$black: #000000;
+$dark-gray: #212121;
+$gray: #dadada;
+$light-gray: #f6f6f6;
+
+
+$purple-hover: #684883;
+$yellow-hover: darken(#F5C854, 10%);
+
+
+// Colors
+$white: #fff;
+
+$colors: (
+  "primary": $purple,
+  "secondary": $yellow,
+);
+
+$theme-colors: (
+  "primary": $purple,
+  "secondary": $yellow,
+  "red": $red
+);
+
+$font-family-noto-sans: 'Noto Sans', sans-serif;
+$font-family-base:       $font-family-noto-sans;
+
+$font-family-baloo: 'Baloo', sans-serif;
+$font-family-heading-baloo: $font-family-baloo;
+
+
+
+
+$line-height-base: 1.5;
+
+$font-weight-light:     300;
+$font-weight-normal:    400;
+$font-weight-semibold:  600;
+$font-weight-bold:      700;
+$font-weight-extrabold: 800;
+
+$font-weight-base: $font-weight-light;
+
+// Headings
+$h1-font-size: rem(40);
+$h2-font-size: rem(36);
+$h3-font-size: rem(32);
+$h4-font-size: rem(24);
+$h5-font-size: rem(20);
+$h6-font-size: rem(18);
+
+$headings-margin-bottom: $spacer * 0.75;
+
+$font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+  5: $h5-font-size,
+  6: $h6-font-size
+);
+
+// Border Radius
+$border-radius: rem(28);
+$border-radius-sm: rem(12);
+
+// Input + Button
+$input-btn-padding-y: 0.65rem;
+$input-btn-padding-x: 1.5rem;
+$input-btn-font-size: rem(22);
+
+// Button
+$btn-border-radius: $border-radius;
+$btn-padding-y:     $input-btn-padding-y;
+$btn-padding-x:     $input-btn-padding-x;
+$btn-font-size:     $input-btn-font-size;
+$btn-font-weight:   $font-weight-bold;
+$btn-border-width:  2px;
+
+// Transitions.
+$transition-base: all 0.2s ease-in-out;
+
+// Grid
+$grid-gutter-width: 2rem;
+$container-padding-x: 2rem;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1300px,
+  xxl: 1530px
+);
+
+$container-max-widths: (
+  sm: 768px,
+  md: 992px,
+  lg: 1300px,
+  xl: 1510px,
+  xxl: 1600px
+);

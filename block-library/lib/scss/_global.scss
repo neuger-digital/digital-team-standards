@@ -1,0 +1,145 @@
+//THESE ARE EXAMPLE STYLES. ONY COPY WHAT IS ACTUALLY NEEDED AND CAREFULLY ADJUST ACCORDING TO NEW PROJECTS STYLES.
+
+
+body {
+	overflow-x: hidden;
+
+	font-family: $font-family-base;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+
+	h1 {
+		@include header-size(48);
+	}
+
+	h2 {
+		font-family: $font-family-baloo;
+		@include header-size(32);
+	}
+
+	h3 {
+		@include header-size(24);
+	}
+
+	p,
+	ul,
+	li {
+		@include responsive-font-size(18);
+	}
+
+	a {
+		color: $purple;
+		&:hover {
+			color: $purple-hover;
+		}
+	}
+}
+
+.yellow-dash::after {
+	content: "";
+	display: block;
+	background: $yellow;
+	height: 7px;
+	max-width: 50px;
+	margin: 2rem 0;
+}
+
+.gform_title {
+	color: $purple !important;
+}
+
+.gform_button {
+	background-color: $purple !important;
+
+	&:hover {
+		background-color: $purple-hover !important;
+	}
+}
+
+
+.pagination-block {
+	display: flex;
+	justify-content: center;
+
+	.pagination {
+		li {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-shrink: 0;
+			margin-right: .5rem;
+			font-size: 1rem;
+			padding: 0;
+
+			a, button {
+				text-align: center;
+				font-weight: bold;
+				border-radius: 4px;
+				border: 0px solid #797979;
+				background: $white;
+				box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+				text-decoration: none;
+				color: $black;
+				width: 2rem;
+				height: 2rem;
+				padding: 4px;
+			}
+
+			a:hover {
+				background: $purple-hover;
+				color: $white;
+
+				svg {
+					path {
+						fill: $white;
+					}
+				}
+			}
+
+			.current {
+				text-align: center;
+				font-weight: bold;
+				border-radius: 4px;
+				border: 0px solid #797979;
+				background: $white;
+				box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+				width: 2rem;
+				height: 2rem;
+				padding: 4px;
+				background-color: #e7e7e7;
+				color: $purple;
+			}
+		}
+
+		.disabled {
+			border: 0;
+			font-weight: 700;
+
+			button {
+				font-weight: 700;
+				background-color: #e7e7e7;
+				border-radius: 4px;
+				opacity: 0.5;
+				color: #999;
+				border: 0px solid #797979;
+				box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+			}
+		}
+
+		.prev,
+		.next {
+
+			button {
+				color: #999;
+				font-weight: 700;
+			}
+
+			a {
+				color: $black;
+				font-weight: 700;
+				text-decoration: none;
+			}
+		}
+	}
+}

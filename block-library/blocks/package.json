@@ -1,0 +1,27 @@
+// THIS IS A SAMPLE VERSION OF A PACKAGE.JSON FILE. NEWER PROJECTS MAY HAVE DIFFERENT VERSION NUMBERS THAN ARE LISTED HERE.
+//REPLACE THE WORDS "key" AND "unionof youth.org" WITH APPROPRIATE PROJECT TERMS
+
+
+{
+	"name": "key-blocks",
+	"version": "1.0.0",
+	"author": "Neuger <webdev@neuger.com>",
+	"description": "Custom blocks made for unionofyouth.org.",
+	"main": "src/index.js",
+	"devDependencies": {
+		"@babel/plugin-proposal-class-properties": "^7.18.6",
+		"@svgr/webpack": "^7.0.0",
+		"@wordpress/eslint-plugin": "^14.5.0",
+		"@wordpress/scripts": "^26.3.0",
+		"url-loader": "^4.1.1"
+	},
+	"scripts": {
+		"start": "wp-scripts start",
+		"build": "wp-scripts build"
+	},
+	"dependencies": {
+		"classnames": "^2.3.2",
+		"lodash.assign": "^4.2.0",
+		"slick-carousel": "^1.8.1"
+	}
+}

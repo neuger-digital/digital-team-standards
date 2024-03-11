@@ -1,0 +1,324 @@
+//THESE ARE EXAMPLE STYLES. ONY COPY WHAT IS ACTUALLY NEEDED AND CAREFULLY ADJUST ACCORDING TO NEW PROJECTS STYLES.
+
+.blocks {
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+	position: relative;
+
+	padding-left: $grid-gutter-width / 4 !important;
+	padding-right: $grid-gutter-width / 4 !important;
+
+
+	.container {
+		position: relative;
+		z-index: 1;
+	}
+
+	.wp-block-buttons {
+		margin-bottom: 0;
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+	}
+
+
+
+	.column-image {
+		img {
+			box-shadow: 0 0 0 20px $purple;
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+		padding: 100px 0;
+	}
+
+	h2 {
+		font-family: $font-family-baloo;
+		line-height: 1.2;
+	}
+
+	h2,
+	ol,
+	ul,
+	p {
+		color: inherit;
+	}
+
+	em {
+		font-weight: 400;
+		font-style: italic;
+	}
+
+	// Button Style
+	@include button($yellow, $yellow, $dark-gray, $yellow-hover, $yellow-hover, $dark-gray);
+
+	.wp-block-button.is-style-outline .wp-block-button__link {
+		border-color: $purple;
+		color: $purple;
+
+		&:hover {
+			background-color: darken($white, 10%);
+			border-color: $purple;
+			color: $purple;
+		}
+	}
+
+	// Spacing Styles
+
+	&.spacing-top-reduced {
+		padding-top: 25px;
+
+		@include media-breakpoint-up(sm) {
+			padding-top: 50px;
+		}
+	}
+
+	&.spacing-top-none {
+		padding-top: 0;
+	}
+
+
+	&.spacing-bottom-reduced {
+		padding-bottom: 25px;
+
+		@include media-breakpoint-up(sm) {
+			padding-bottom: 50px;
+		}
+	}
+
+	&.spacing-bottom-none {
+		padding-bottom: 0;
+	}
+
+	//Default colors
+
+	color: $dark-gray;
+
+	p {
+		@include responsive-font-size(24);
+		line-height: $line-height-base;
+		font-family: $font-family-base;
+		font-weight: 400;
+	}
+
+	ul, ol, li {
+		@include responsive-font-size(24);
+		line-height: $line-height-base;
+		font-family: $font-family-base;
+		font-weight: 400;
+		text-align: left;
+	}
+
+	a {
+		color: $black;
+		&:hover {
+			color: $purple-hover;
+		}
+	}
+
+	--block-style: $white;
+
+	&.is-style-light-gray {
+		--block-style: $light-gray;
+		background-color: $light-gray;
+
+		a {
+			color: $black;
+			&:hover {
+				color: $purple-hover;
+			}
+		}
+
+		.wp-block-button.is-style-outline .wp-block-button__link {
+				border-color: $purple;
+				color: $purple;
+
+				&:hover {
+					background-color: darken($light-gray, 10%);
+				}
+		}
+
+
+	}
+
+	&.is-style-gray{
+		--block-style: $gray;
+		background-color: $gray;
+
+		a {
+			color: $black;
+			&:hover {
+				color: $purple;
+			}
+		}
+
+		.wp-block-button.is-style-outline .wp-block-button__link {
+				border-color: $purple;
+				color: $purple;
+
+				&:hover {
+					background-color: darken($gray, 10%);
+				}
+		}
+
+		.column-callout {
+			position: relative;
+			z-index: 2;
+			margin: auto;
+
+			.inner-callout {
+				background-color: rgba(128, 128, 128, .94);
+
+				p {
+					color: $white;
+				}
+			}
+		}
+	}
+
+	&.is-style-white {
+		.wp-block-button.is-style-outline .wp-block-button__link {
+				border-color: $purple;
+				color: $purple;
+
+				&:hover {
+					background-color: darken($white, 10%);
+				}
+		}
+
+	}
+
+	h2.wp-block-heading {
+		color: $purple;
+	}
+
+
+	//Theme color styles
+	&.is-style-purple {
+		--block-style: $purple;
+		color: $white;
+		background-color: $purple;
+
+		a {
+			color: $white;
+			&:hover {
+				color: $gray;
+			}
+		}
+
+		.wp-block-button.is-style-outline .wp-block-button__link {
+			border-color: $yellow;
+			color: $yellow;
+
+				&:hover {
+					background-color: lighten($purple, 10%);
+				}
+		}
+
+		h2.wp-block-heading {
+			color: $white;
+		}
+
+		.column-image {
+			img {
+				box-shadow: 0 0 0 20px $yellow;
+			}
+		}
+
+		.column-callout {
+			position: relative;
+			z-index: 2;
+			margin: auto;
+
+			.inner-callout {
+				background-color: rgba(60, 37, 79, .94);
+			}
+		}
+
+		.quote-wrapper {
+			background-image: url('data:image/svg+xml,<svg width="38" height="32" viewBox="0 0 44 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M43.416 0.607994C42.648 3.85066 41.8373 7.34933 40.984 11.104C40.1307 14.8587 39.3627 18.528 38.68 22.112C37.9973 25.696 37.4427 28.9813 37.016 31.968H24.856L23.96 30.56C24.728 27.5733 25.7093 24.3733 26.904 20.96C28.0987 17.4613 29.4213 13.9627 30.872 10.464C32.3227 6.96533 33.7307 3.68 35.096 0.607994H43.416ZM19.736 0.607994C18.968 3.85066 18.1573 7.34933 17.304 11.104C16.4507 14.8587 15.6827 18.528 15 22.112C14.3173 25.696 13.7627 28.9813 13.336 31.968H1.304L0.536 30.56C1.304 27.5733 2.28533 24.3733 3.48 20.96C4.67467 17.4613 5.95467 13.9627 7.32 10.464C8.77067 6.96533 10.1787 3.68 11.544 0.607994H19.736Z" fill="%23FFFFFF"/></svg>');
+		}
+	}
+
+	&.is-style-purple-pattern {
+		h1,
+		h2,
+		h3 {
+			color: $white;
+		}
+
+		a {
+			color: $white;
+			&:hover {
+				color: $gray;
+			}
+		}
+
+		.wp-block-button.is-style-outline .wp-block-button__link {
+			border-color: $yellow;
+			color: $yellow;
+
+				&:hover {
+					background-color: lighten($purple, 10%);
+				}
+		}
+
+		--block-style: $purple;
+		color: $white;
+		background-color: $purple;
+		background-image: url("/../../../../images/background-curvy-pattern.svg");
+		background-position: center;
+		background-size: cover;
+
+		.column-image {
+			img {
+				box-shadow: 0 0 0 20px $yellow;
+			}
+		}
+
+		.column-callout {
+			position: relative;
+			z-index: 2;
+			margin: auto;
+
+			.inner-callout {
+				background-color: rgba(60, 37, 79, .94);
+
+				h2 {
+					color: $white;
+				}
+			}
+		}
+
+		.quote-wrapper {
+			background-image: url('data:image/svg+xml,<svg width="38" height="32" viewBox="0 0 44 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M43.416 0.607994C42.648 3.85066 41.8373 7.34933 40.984 11.104C40.1307 14.8587 39.3627 18.528 38.68 22.112C37.9973 25.696 37.4427 28.9813 37.016 31.968H24.856L23.96 30.56C24.728 27.5733 25.7093 24.3733 26.904 20.96C28.0987 17.4613 29.4213 13.9627 30.872 10.464C32.3227 6.96533 33.7307 3.68 35.096 0.607994H43.416ZM19.736 0.607994C18.968 3.85066 18.1573 7.34933 17.304 11.104C16.4507 14.8587 15.6827 18.528 15 22.112C14.3173 25.696 13.7627 28.9813 13.336 31.968H1.304L0.536 30.56C1.304 27.5733 2.28533 24.3733 3.48 20.96C4.67467 17.4613 5.95467 13.9627 7.32 10.464C8.77067 6.96533 10.1787 3.68 11.544 0.607994H19.736Z" fill="%23FFFFFF"/></svg>');
+		}
+	}
+
+	//Dividers
+	&.divider-bottom-wave {
+
+		@include wave-bottom($white);
+
+	}
+
+	&.divider-color-bottom-purple {
+
+		@include wave-bottom($purple);
+
+	}
+
+	&.divider-color-bottom-gray {
+
+		@include wave-bottom($gray);
+
+	}
+
+	&.divider-color-bottom-light-gray {
+
+		@include wave-bottom($light-gray);
+
+	}
+}
