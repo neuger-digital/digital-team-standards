@@ -19,15 +19,15 @@ Both the 'blocks' folder and the 'lib' folder for your project will need to have
 * `package.json`: An example json file for a block library.
 * `README.md`: Further instructions on building custom blocks.
 * `webpack.config.js`: An example config file.
-* `/src/` folder: Includes an `index.js` file for importing blocks, a `/blocks/` folder containing folders for each block included in this library, an `/elements/` folder for block elements, and a `/utilities/` folder for block dividers, spacing control, and themes.
+* `src/` folder: Includes an `index.js` file for importing blocks, a `blocks/` folder containing folders for each block included in this library, an `elements/` folder for block elements, and a `utilities/` folder for block dividers, spacing control, and themes.
 
 `lib/`
 * `package.json`: An example json file for a styles library.
-* `/js/` folder: Contains a `main.js` file. This includes a jquery function for running animations with blocks.
-* `/scss/` folder: This includes several style sheets with example styles that can be used for blocks. The most relevant styles for blocks can be found in `_blocks.scss`, `_panels.scss`, and `_mixins.scss`.
+* `js/` folder: Contains a `main.js` file. This includes a jquery function for running animations with blocks.
+* `scss/` folder: This includes several style sheets with example styles that can be used for blocks. The most relevant styles for blocks can be found in `_blocks.scss`, `_panels.scss`, and `_mixins.scss`.
 
 `views/`
-* `/blocks/` folder: This contains a twig file for the callout block.
+* `blocks/` folder: This contains a twig file for the callout block.
 
 `class-site.php`
 * This is a file that would typically be found in the project theme folder. It is where functions applicable to the whole site can be found. For the purposes of this block library, I have only included functions that directly pertain to blocks.
