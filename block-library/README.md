@@ -19,7 +19,7 @@ Both the 'blocks' folder and the 'lib' folder for your project will need to have
 * `package.json`: An example json file for a block library.
 * `README.md`: Further instructions on building custom blocks.
 * `webpack.config.js`: An example config file.
-* `/src/` folder: Includes an `index.js` file for importing blocks, a `/blocks/` folder containing folders for each block inluded in this library, an `/elements/` folder for block elements, and a `/utilities/` folder for block dividers, spacing control, and themes.
+* `/src/` folder: Includes an `index.js` file for importing blocks, a `/blocks/` folder containing folders for each block included in this library, an `/elements/` folder for block elements, and a `/utilities/` folder for block dividers, spacing control, and themes.
 
 `lib/`
 * `package.json`: An example json file for a styles library.
