@@ -73,55 +73,55 @@ When in doubt, use the `--dry-run` first before executing the commands below.
 ### Test to Local
 
 ```
-lando wp search-replace 'sitename.neuger.site' 'sitename.lndo.site' --all-tables
-lando wp cache flush
+lando remote:wp search-replace 'sitename.neuger.site' 'sitename.lndo.site' --all-tables
+lando remote:wp cache flush
 ```
 
 ### Live to Local
 
 ```
-lando wp search-replace 'sitename.ext' 'sitename.lndo.site' --all-tables
-lando wp search-replace 'www.sitename.ext' 'sitename.lndo.site' --all-tables
-lando wp search-replace 'http://sitename.lndo.site' 'https://sitename.lndo.site' --all-tables
-lando wp cache flush
+lando remote:wp search-replace 'sitename.ext' 'sitename.lndo.site' --all-tables
+lando remote:wp search-replace 'www.sitename.ext' 'sitename.lndo.site' --all-tables
+lando remote:wp search-replace 'http://sitename.lndo.site' 'https://sitename.lndo.site' --all-tables
+lando remote:wp cache flush
 ```
 
 ### Local to Dev
 
 ```
-terminus wp sitename.dev -- search-replace 'sitename.lndo.site' 'dev-sitename.neuger.site' --all-tables
-terminus wp sitename.dev -- cache flush
+terminus remote:wp sitename.dev -- search-replace 'sitename.lndo.site' 'dev-sitename.neuger.site' --all-tables
+terminus remote:wp sitename.dev -- cache flush
 ```
 
 ### To Test
 
 ```
-terminus wp sitename.test -- search-replace 'sitename.lndo.site' 'sitename.neuger.site' --all-tables
-terminus wp sitename.test -- search-replace 'dev-sitename.neuger.site' 'sitename.neuger.site' --all-tables
-terminus wp sitename.test -- search-replace 'dev-sitename.pantheonsite.io' 'sitename.neuger.site' --all-tables
-terminus wp sitename.test -- cache flush
+terminus remote:wp sitename.test -- search-replace 'sitename.lndo.site' 'sitename.neuger.site' --all-tables
+terminus remote:wp sitename.test -- search-replace 'dev-sitename.neuger.site' 'sitename.neuger.site' --all-tables
+terminus remote:wp sitename.test -- search-replace 'dev-sitename.pantheonsite.io' 'sitename.neuger.site' --all-tables
+terminus remote:wp sitename.test -- cache flush
 ```
 
 ### To Live
 
 ```
-terminus wp sitename.live -- search-replace 'sitename.lndo.site' 'sitename.ext' --all-tables
-terminus wp sitename.live -- search-replace 'dev-sitename.neuger.site' 'sitename.ext' --all-tables
-terminus wp sitename.live -- search-replace 'dev-sitename.pantheonsite.io' 'sitename.ext' --all-tables
-terminus wp sitename.live -- search-replace 'test-sitename.neuger.site' 'sitename.ext' --all-tables
-terminus wp sitename.live -- search-replace 'test-sitename.pantheonsite.io' 'sitename.ext' --all-tables
-terminus wp sitename.live -- search-replace 'live-sitename.neuger.site' 'sitename.ext' --all-tables
-terminus wp sitename.live -- search-replace 'live-sitename.pantheonsite.io' 'sitename.ext' --all-tables
-terminus wp sitename.live -- search-replace 'sitename.neuger.site' 'sitename.ext' --all-tables
-terminus wp sitename.live -- search-replace 'http://sitename.ext' 'https://sitename.ext' --all-tables
-terminus wp sitename.live -- cache flush
+terminus remote:wp sitename.live -- search-replace 'sitename.lndo.site' 'sitename.ext' --all-tables
+terminus remote:wp sitename.live -- search-replace 'dev-sitename.neuger.site' 'sitename.ext' --all-tables
+terminus remote:wp sitename.live -- search-replace 'dev-sitename.pantheonsite.io' 'sitename.ext' --all-tables
+terminus remote:wp sitename.live -- search-replace 'test-sitename.neuger.site' 'sitename.ext' --all-tables
+terminus remote:wp sitename.live -- search-replace 'test-sitename.pantheonsite.io' 'sitename.ext' --all-tables
+terminus remote:wp sitename.live -- search-replace 'live-sitename.neuger.site' 'sitename.ext' --all-tables
+terminus remote:wp sitename.live -- search-replace 'live-sitename.pantheonsite.io' 'sitename.ext' --all-tables
+terminus remote:wp sitename.live -- search-replace 'sitename.neuger.site' 'sitename.ext' --all-tables
+terminus remote:wp sitename.live -- search-replace 'http://sitename.ext' 'https://sitename.ext' --all-tables
+terminus remote:wp sitename.live -- cache flush
 
 Additional replacements for adding wwws:
-terminus wp sitename.live -- search-replace 'http://sitename.ext' 'https://www.sitename.ext' --all-tables
-terminus wp sitename.live -- search-replace 'https://sitename.ext' 'https://www.sitename.ext' --all-tables
+terminus remote:wp sitename.live -- search-replace 'http://sitename.ext' 'https://www.sitename.ext' --all-tables
+terminus remote:wp sitename.live -- search-replace 'https://sitename.ext' 'https://www.sitename.ext' --all-tables
 
 Additional replacements for removing wwws:
-terminus wp sitename.live -- search-replace 'www.sitename.ext' 'sitename.ext' --all-tables
+terminus remote:wp sitename.live -- search-replace 'www.sitename.ext' 'sitename.ext' --all-tables
 
 ```
 
