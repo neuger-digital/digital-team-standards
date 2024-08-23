@@ -73,17 +73,17 @@ When in doubt, use the `--dry-run` first before executing the commands below.
 ### Test to Local
 
 ```
-lando remote:wp search-replace 'sitename.neuger.site' 'sitename.lndo.site' --all-tables
-lando remote:wp cache flush
+lando wp search-replace 'sitename.neuger.site' 'sitename.lndo.site' --all-tables
+lando wp cache flush
 ```
 
 ### Live to Local
 
 ```
-lando remote:wp search-replace 'sitename.ext' 'sitename.lndo.site' --all-tables
-lando remote:wp search-replace 'www.sitename.ext' 'sitename.lndo.site' --all-tables
-lando remote:wp search-replace 'http://sitename.lndo.site' 'https://sitename.lndo.site' --all-tables
-lando remote:wp cache flush
+lando wp search-replace 'sitename.ext' 'sitename.lndo.site' --all-tables
+lando wp search-replace 'www.sitename.ext' 'sitename.lndo.site' --all-tables
+lando wp search-replace 'http://sitename.lndo.site' 'https://sitename.lndo.site' --all-tables
+lando wp cache flush
 ```
 
 ### Local to Dev
